@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Tutioral</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    // setTimeout(function(){
+    //     console.log('Mayank');
+    // }, 3000)
+
+
+
+    // setInterval(function(){
+    //     console.log('Mayank Yadav');
+        
+    // },2000)
+
+
+
+    // const sayMayank = function(){
+    //     console.log('Mayank');
+    // }
+    // setTimeout(sayMayank,2000)
+
+
+
+    // const changeText = function(){
+    //     document.querySelector('h1').innerHTML = "Best JS Course"
+    // }
+    // setTimeout(changeText,5000)
+    
+
+
+
+     const changeText = function(){
+        document.querySelector('h1').innerHTML = "Best JS Course"
+    }
+    
+    const changeMe = setTimeout(changeText,5000)
+    
+    document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe)
+    console.log('Stopped');
+        
+    })
+</script>
+</html>

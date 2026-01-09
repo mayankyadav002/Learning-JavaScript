@@ -34,20 +34,45 @@
     // altKey, ctrlKey, shiftKey, keyCode
 
 
+
+
+
+
     // Event propagation ------ 1) Event bubbling--(Below code with false) and 2) Event capturing--(Below code with true)
 
-    document.getElementById('images').addEventListener('click', function(e){
-        console.log('Clicked inside the ul');  
-    }, false)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('Clicked inside the ul');  
+    // }, false)
 
-    document.getElementById('second').addEventListener('click', function(e){
-        console.log('second image');  
-        e.stopPropagation()
-    }, false)
+    // document.getElementById('second').addEventListener('click', function(e){
+    //     console.log('second image');  
+    //     e.stopPropagation()
+    // }, false)
 
-    document.querySelector('#google').addEventListener('click', function(e){
-        e.preventDefault()
-        e.stopPropagation()
-    })
+    // document.querySelector('#google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    // },false)
+
+
+
+
+
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target);
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+
+        if(e.target.tagName==='IMG'){
+            console.log(e.target.id);
+            
+        let removeIt = e.target.parentNode
+       // removeIt.remove() or below one
+       removeIt.parentNode.removeChild(removeIt)
+        }
+     
+    }, false)
 </script>
 </html>
